@@ -20,8 +20,8 @@ export default function Hero() {
           <div className="relative">
             <div className="aspect-square rounded-full overflow-hidden shadow-xl">
               <img
-                src="./src/media/moi-removebg.png"
-                alt="Philippe Garcia"
+                src="./src/media/philippe.png"
+                alt="Philippe Garcia image de profil"
                 className="w-full h-full object-cover grayscale transition-all duration-300 ease-in-out hover:grayscale-0"
               />
             </div>
