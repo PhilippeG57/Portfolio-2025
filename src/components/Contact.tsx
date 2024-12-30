@@ -38,7 +38,7 @@ export default function Contact() {
         <h2 className="text-3xl font-bold text-center mb-12">Contactez-moi</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
-            <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
+            <h3 className="text-xl font-semibold mb-6">Informations de contact</h3>
             <div className="space-y-4">
               <div className="flex items-center">
                 <Mail className="h-6 w-6 text-primary mr-3" />
