@@ -1,11 +1,47 @@
+import React, { useEffect, useState } from 'react';
+
 export default function Hero() {
+  const [isVisible, setIsVisible] = useState({
+    leftBlock: false,
+    rightBlock: false,
+  });
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible((prev) => ({
+              ...prev,
+              [entry.target.id]: true,
+            }));
+          }
+        });
+      },
+      {
+        threshold: 0.3, // Déclenche lorsque 30% de l'élément est visible
+      }
+    );
+
+    const elements = document.querySelectorAll('.hero-block');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
   return (
     <section
       className="min-h-screen flex items-center bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
+          <div
+            id="leftBlock"
+            className={`hero-block ${isVisible.leftBlock ? 'animate-slide-in-left' : 'opacity-0'
+              }`}
+          >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
               Bonjour, je suis Philippe GARCIA
             </h1>
@@ -20,7 +56,11 @@ export default function Hero() {
               Contactez-moi
             </a>
           </div>
-          <div className="relative">
+          <div
+            id="rightBlock"
+            className={`relative hero-block ${isVisible.rightBlock ? 'animate-slide-in-right' : 'opacity-0'
+              }`}
+          >
             <div className="aspect-square rounded-full overflow-hidden shadow-xl">
               <img
                 src="./src/media/philippe.png"

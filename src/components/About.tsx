@@ -1,22 +1,62 @@
+import React, { useEffect, useState } from 'react';
 import { GraduationCap, Briefcase, Award } from 'lucide-react';
 
 export default function About() {
+    const [isVisible, setIsVisible] = useState({
+        formation: false,
+        experience: false,
+        objectifs: false,
+    });
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setIsVisible((prev) => ({
+                            ...prev,
+                            [entry.target.id]: true,
+                        }));
+                    }
+                });
+            },
+            {
+                threshold: 0.3, // Se déclenche lorsque 30% de l'élément est visible
+            }
+        );
+
+        const elements = document.querySelectorAll('.about-block');
+        elements.forEach((el) => observer.observe(el));
+
+        return () => {
+            elements.forEach((el) => observer.unobserve(el));
+        };
+    }, []);
+
     return (
         <section id="about" className="py-20 bg-white dark:bg-gray-900 transition-colors">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 className="text-3xl font-bold text-center mb-12 dark:text-white">À propos de moi</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div className="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                    <div
+                        id="formation"
+                        className={`about-block p-6 bg-gray-50 dark:bg-gray-800 rounded-lg ${isVisible.formation ? 'animate-slide-in-left' : 'opacity-0'
+                            }`}
+                    >
                         <GraduationCap className="h-12 w-12 text-primary mb-4" />
                         <h3 className="text-xl font-semibold mb-3 dark:text-white">Formation</h3>
                         <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                            <li>• Chef de projet Logiciel et Réseau<br></br>Titre RNCP Niveau 6</li>
-                            <li>• Formation Développeur web et web mobile<br></br>Titre RNCP Niveau 5</li>
+                            <li>• Chef de projet Logiciel et Réseau<br />Titre RNCP Niveau 6</li>
+                            <li>• Formation Développeur web et web mobile<br />Titre RNCP Niveau 5</li>
                             <li>• Baccalauréat général</li>
                         </ul>
                     </div>
 
-                    <div className="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                    <div
+                        id="experience"
+                        className={`about-block p-6 bg-gray-50 dark:bg-gray-800 rounded-lg ${isVisible.experience ? 'animate-slide-in-up' : 'opacity-0'
+                            }`}
+                    >
                         <Briefcase className="h-12 w-12 text-primary mb-4" />
                         <h3 className="text-xl font-semibold mb-3 dark:text-white">Expérience</h3>
                         <ul className="space-y-2 text-gray-600 dark:text-gray-300">
@@ -28,7 +68,11 @@ export default function About() {
                         </ul>
                     </div>
 
-                    <div className="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                    <div
+                        id="objectifs"
+                        className={`about-block p-6 bg-gray-50 dark:bg-gray-800 rounded-lg ${isVisible.objectifs ? 'animate-slide-in-right' : 'opacity-0'
+                            }`}
+                    >
                         <Award className="h-12 w-12 text-primary mb-4" />
                         <h3 className="text-xl font-semibold mb-3 dark:text-white">Objectifs</h3>
                         <ul className="space-y-2 text-gray-600 dark:text-gray-300">
@@ -38,8 +82,6 @@ export default function About() {
                             <li>• Évoluer constamment</li>
                         </ul>
                     </div>
-
-
                 </div>
 
                 <div className="flex justify-center gap-4 mb-8 pt-16">

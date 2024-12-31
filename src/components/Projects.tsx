@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import chateauxRhenans from '../media/projets/chateauxrhenans.jpg';
 import vendezFacile from '../media/projets/vendezfacile.png';
 import waysWater from '../media/projets/wwt.png';
@@ -113,11 +113,36 @@ const projects = [
 
 export default function Projects() {
   const [filter, setFilter] = useState('tous');
+  const [visibleProjects, setVisibleProjects] = useState<Record<number, boolean>>({}); // Typage ajouté
 
   const filteredProjects = projects.filter((project) => {
     if (filter === 'tous') return true;
     return project.category === filter;
   });
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const target = entry.target as HTMLDivElement; // Cast explicite
+            setVisibleProjects((prev) => ({
+              ...prev,
+              [parseInt(target.dataset.index!, 10)]: true, // Utilisation de parseInt
+            }));
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    const elements = document.querySelectorAll('.project-card');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
 
   return (
     <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors">
@@ -130,7 +155,6 @@ export default function Projects() {
           >
             Tous les projets
           </button>
-
           <button
             onClick={() => setFilter('professionnel')}
             className={`px-4 py-2 rounded-lg ${filter === 'professionnel' ? 'bg-primary text-white' : 'bg-gray-200'}`}
@@ -147,8 +171,18 @@ export default function Projects() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
-            <a href={project.href} target="_blank">
-              <div key={index} className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+            <a href={project.href} target="_blank" key={index}>
+              <div
+                className={`project-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow ${visibleProjects[index]
+                    ? index % 3 === 0
+                      ? 'animate-slide-in-left'
+                      : index % 3 === 1
+                        ? 'animate-slide-in-up'
+                        : 'animate-slide-in-right'
+                    : 'opacity-0'
+                  }`}
+                data-index={index} // Ajout de l'attribut data-index
+              >
                 <img
                   src={project.image}
                   alt={project.title}
@@ -173,6 +207,6 @@ export default function Projects() {
           ))}
         </div>
       </div>
-    </section >
+    </section>
   );
 }
