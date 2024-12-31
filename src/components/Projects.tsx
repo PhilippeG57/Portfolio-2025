@@ -131,9 +131,9 @@ export default function Projects() {
   });
 
   return (
-    <section id="projects" className="py-20 bg-gray-50">
+    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-8">Mes projets</h2>
+        <h2 className="text-3xl font-bold text-center mb-8 dark:text-white">Mes projets</h2>
         <div className="flex justify-center gap-4 mb-8">
           <button
             onClick={() => setFilter('tous')}

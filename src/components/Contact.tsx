@@ -33,30 +33,30 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20 bg-white dark:bg-gray-900 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-12">Contactez-moi</h2>
+        <h2 className="text-3xl font-bold text-center mb-12 dark:text-white">Contactez-moi</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
-            <h3 className="text-xl font-semibold mb-6">Informations de contact</h3>
+            <h3 className="text-xl font-semibold mb-6 dark:text-white">Informations de contact</h3>
             <div className="space-y-4">
               <div className="flex items-center">
                 <Mail className="h-6 w-6 text-primary mr-3" />
-                <span>philippe57660.garcia@gmail.com</span>
+                <span className="dark:text-white">philippe57660.garcia@gmail.com</span>
               </div>
               <div className="flex items-center">
                 <Phone className="h-6 w-6 text-primary mr-3" />
-                <span>+33770439150</span>
+                <span className="dark:text-white">+33770439150</span>
               </div>
               <div className="flex items-center">
                 <MapPin className="h-6 w-6 text-primary mr-3" />
-                <span>57400 SARREBOURG</span>
+                <span className="dark:text-white">57400 SARREBOURG</span>
               </div>
             </div>
           </div>
           <form ref={form} onSubmit={sendEmail} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">Nom</label>
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-white">Nom</label>
               <input
                 type="text"
                 id="name"
@@ -66,7 +66,7 @@ export default function Contact() {
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-white">Email</label>
               <input
                 type="email"
                 id="email"
@@ -76,7 +76,7 @@ export default function Contact() {
               />
             </div>
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-white">Message</label>
               <textarea
                 id="message"
                 name="message"

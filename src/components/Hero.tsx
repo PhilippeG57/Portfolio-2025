@@ -1,18 +1,21 @@
 export default function Hero() {
   return (
-    <section id="about" className="min-h-screen flex items-center bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+    <section
+      className="min-h-screen flex items-center bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
               Bonjour, je suis Philippe GARCIA
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
-              Développeur Web et formateur âgé de 29 ans. Mes passions sont le monde d'internet, les avancées technologiques et les jeux vidéo.
+            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+              Développeur Web et formateur âgé de 29 ans. Mes passions sont le
+              monde d'internet, les avancées technologiques et les jeux vidéo.
             </p>
             <a
               href="#contact"
-              className="inline-block bg-primary text-white px-8 py-3 rounded-lg font-medium hover:bg-primary transition-colors"
+              className="inline-block bg-primary text-white px-8 py-3 rounded-lg font-medium hover:bg-primary-hover transition-colors"
             >
               Contactez-moi
             </a>
