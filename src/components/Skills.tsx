@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Code2, Palette, Terminal, Laptop } from 'lucide-react';
 
 const skills = [
@@ -61,10 +61,10 @@ export default function Skills() {
               key={index}
               data-index={index}
               className={`skill-card p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow ${visibleSkills[index]
-                  ? index < 2
-                    ? 'animate-slide-in-left'
-                    : 'animate-slide-in-right'
-                  : 'opacity-0'
+                ? index < 2
+                  ? 'animate-slide-in-left'
+                  : 'animate-slide-in-right'
+                : 'opacity-0'
                 }`}
             >
               <skill.icon className="h-12 w-12 text-primary mb-4" />
