@@ -10,9 +10,9 @@ export default function About() {
                         <GraduationCap className="h-12 w-12 text-primary mb-4" />
                         <h3 className="text-xl font-semibold mb-3 dark:text-white">Formation</h3>
                         <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                            <li>• Titre RNCP Niveau 5 - Développeur Web</li>
-                            <li>• Formation continue en développement web</li>
-                            <li>• Veille technologique quotidienne</li>
+                            <li>• Chef de projet Logiciel et Réseau<br></br>Titre RNCP Niveau 6</li>
+                            <li>• Formation Développeur web et web mobile<br></br>Titre RNCP Niveau 5</li>
+                            <li>• Baccalauréat général</li>
                         </ul>
                     </div>
 
@@ -20,9 +20,11 @@ export default function About() {
                         <Briefcase className="h-12 w-12 text-primary mb-4" />
                         <h3 className="text-xl font-semibold mb-3 dark:text-white">Expérience</h3>
                         <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                            <li>• 3 ans d'expérience en développement web</li>
-                            <li>• Freelance depuis 2022</li>
+                            <li>• 5 ans d'expérience en développement web</li>
+                            <li>• Développeur web en agence de communication de 2021 à 2022</li>
+                            <li>• Freelance de 2022 à 2024</li>
                             <li>• Formateur en développement web</li>
+                            <li>• Chef de Projet Système d'Informations depuis 2024</li>
                         </ul>
                     </div>
 
@@ -32,9 +34,18 @@ export default function About() {
                         <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                             <li>• Créer des solutions web innovantes</li>
                             <li>• Partager mes connaissances</li>
+                            <li>• Rester à jour sur l'avancée technologique</li>
                             <li>• Évoluer constamment</li>
                         </ul>
                     </div>
+
+
+                </div>
+
+                <div className="flex justify-center gap-4 mb-8 pt-16">
+                    <a href="https://philippe-garcia.fr/cv2.pdf" target="_blank">
+                        <button className="px-4 py-2 rounded-lg bg-primary text-white">Mon CV</button>
+                    </a>
                 </div>
             </div>
         </section>
