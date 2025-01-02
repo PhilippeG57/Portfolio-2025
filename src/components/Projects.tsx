@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import chateauxRhenansWebp from '../media/projets/chateauxrhenans.webp';
 import chateauxRhenans from '../media/projets/chateauxrhenans.jpg';
 import vendezFacileWebp from '../media/projets/vendezfacile.webp';
