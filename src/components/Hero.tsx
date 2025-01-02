@@ -63,6 +63,7 @@ export default function Hero() {
               monde d'internet, les avancées technologiques et les jeux vidéo.
             </p>
             <a
+              title="Contact me"
               href="#contact"
               className="inline-block bg-primary text-white px-8 py-3 rounded-lg font-medium hover:bg-primary-hover transition-colors"
             >

@@ -201,7 +201,7 @@ export default function Projects() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
-            <a href={project.href} target="_blank" key={index}>
+            <a href={project.href} target="_blank" key={index} title={project.title} aria-label={project.title}>
               <div
                 className={`project-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow ${visibleProjects[index]
                   ? index % 3 === 0

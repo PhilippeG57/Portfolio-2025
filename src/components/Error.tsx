@@ -14,6 +14,7 @@ const Error: React.FC<ErrorProps> = ({
             <h1 className="text-4xl font-bold mb-4 dark:text-white">Erreur {statusCode}</h1>
             <p className="text-xl mb-8 dark:text-white">{message}</p>
             <a
+                title="Retour à l'accueil"
                 href="/"
                 className="px-4 py-2 border-solid border-primary border-[2px] bg-primary text-white rounded hover:bg-white hover:text-primary"
             >
