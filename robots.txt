@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Allow: /assets/*.jpg$
+Allow: /assets/*.jpeg$
+Allow: /assets/*.png$
+Allow: /assets/*.gif$
+Allow: /assets/*.webp$
+Allow: /assets/*.svg$
+Disallow: /cgi-bin/
+Disallow: /signature/
+
+# Plan du site
+Sitemap: https://votre-domaine.com/sitemap.xml
