@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import philippeImage from '../media/philippe.png';
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState({
@@ -63,7 +64,7 @@ export default function Hero() {
           >
             <div className="aspect-square rounded-full overflow-hidden shadow-xl">
               <img
-                src="./src/media/philippe.png"
+                src="/media/philippe.png"
                 alt="Philippe Garcia image de profil"
                 className="w-full h-full object-cover grayscale transition-all duration-300 ease-in-out hover:grayscale-0"
               />
