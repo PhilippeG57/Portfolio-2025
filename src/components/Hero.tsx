@@ -9,6 +9,14 @@ export default function Hero() {
   });
 
   useEffect(() => {
+    // Ajout du prefetch pour l'image
+    const prefetchLink = document.createElement('link');
+    prefetchLink.rel = 'prefetch';
+    prefetchLink.href = philippeWebp;
+    prefetchLink.as = 'image';
+    document.head.appendChild(prefetchLink);
+
+    // Intersection Observer pour les animations
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -28,8 +36,10 @@ export default function Hero() {
     const elements = document.querySelectorAll('.hero-block');
     elements.forEach((el) => observer.observe(el));
 
+    // Cleanup
     return () => {
       elements.forEach((el) => observer.unobserve(el));
+      document.head.removeChild(prefetchLink);
     };
   }, []);
 
@@ -39,6 +49,7 @@ export default function Hero() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          {/* Bloc de gauche */}
           <div
             id="leftBlock"
             className={`hero-block ${isVisible.leftBlock ? 'animate-slide-in-left' : 'opacity-0'
@@ -58,6 +69,8 @@ export default function Hero() {
               Contactez-moi
             </a>
           </div>
+
+          {/* Bloc de droite */}
           <div
             id="rightBlock"
             className={`relative hero-block ${isVisible.rightBlock ? 'animate-slide-in-right' : 'opacity-0'

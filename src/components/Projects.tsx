@@ -214,6 +214,7 @@ export default function Projects() {
                     src={project.fallbackImage}
                     alt={project.title}
                     className="w-full h-48 object-cover"
+                    loading="lazy"
                   />
                 </picture>
                 <div className="p-6">
