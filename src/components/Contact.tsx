@@ -135,6 +135,7 @@ export default function Contact() {
               ></textarea>
             </div>
             <button
+              aria-label="Envoyer"
               type="submit"
               className="w-full bg-primary border-2 text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-primary hover:border-primary hover:border-solid hover:border-2 transition-colors"
             >

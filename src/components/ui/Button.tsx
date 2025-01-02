@@ -3,21 +3,22 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   fullWidth?: boolean;
 }
 
-export function Button({ 
-  children, 
-  variant = 'primary', 
+export function Button({
+  children,
+  variant = 'primary',
   fullWidth = false,
   className = '',
-  ...props 
+  ...props
 }: ButtonProps) {
   const baseStyles = 'px-6 py-3 rounded-lg font-medium transition-colors';
   const variantStyles = {
     primary: 'bg-[#a43f49] hover:bg-[#8a353d] text-white',
     secondary: 'bg-gray-200 hover:bg-gray-300 text-gray-800',
   };
-  
+
   return (
-    <button 
+    <button
+      aria-label="Toggle Style"
       className={`${baseStyles} ${variantStyles[variant]} ${fullWidth ? 'w-full' : ''} ${className}`}
       {...props}
     >

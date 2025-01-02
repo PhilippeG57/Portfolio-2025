@@ -177,18 +177,21 @@ export default function Projects() {
         <h2 className="text-3xl font-bold text-center mb-8 dark:text-white">Mes projets</h2>
         <div className="flex justify-center gap-4 mb-8">
           <button
+            aria-label="Tous les projets"
             onClick={() => setFilter('tous')}
             className={`px-4 py-2 rounded-lg ${filter === 'tous' ? 'bg-primary text-white' : 'bg-gray-200'}`}
           >
             Tous les projets
           </button>
           <button
+            aria-label="Professionnel"
             onClick={() => setFilter('professionnel')}
             className={`px-4 py-2 rounded-lg ${filter === 'professionnel' ? 'bg-primary text-white' : 'bg-gray-200'}`}
           >
             Professionnel
           </button>
           <button
+            aria-label="Personnel"
             onClick={() => setFilter('personnel')}
             className={`px-4 py-2 rounded-lg ${filter === 'personnel' ? 'bg-primary text-white' : 'bg-gray-200'}`}
           >

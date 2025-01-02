@@ -86,7 +86,7 @@ export default function About() {
 
                 <div className="flex justify-center gap-4 mb-8 pt-16">
                     <a href="https://philippe-garcia.fr/cv.pdf" target="_blank">
-                        <button className="px-4 py-2 rounded-lg bg-primary text-white">Mon CV</button>
+                        <button aria-label="CV de Philippe Garcia" className="px-4 py-2 rounded-lg bg-primary text-white">Mon CV</button>
                     </a>
                 </div>
             </div>

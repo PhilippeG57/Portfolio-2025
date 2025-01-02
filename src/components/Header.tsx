@@ -57,7 +57,7 @@ export default function Header() {
             <ThemeToggle />
           </div>
 
-          <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <button className="md:hidden" aria-label="Menu Mobile" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? (
               <X className="h-6 w-6 dark:text-white" />
             ) : (
