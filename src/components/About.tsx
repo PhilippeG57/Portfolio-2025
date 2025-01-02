@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { GraduationCap, Briefcase, Award } from 'lucide-react';
 
 export default function About() {

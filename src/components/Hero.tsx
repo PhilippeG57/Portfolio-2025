@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import philippeWebp from '../media/philippe.webp';
 import philippeImage from '../media/philippe.png';
 
