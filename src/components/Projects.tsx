@@ -145,6 +145,9 @@ export default function Projects() {
   });
 
   useEffect(() => {
+    // Réinitialiser la visibilité des projets lorsqu'on change de filtre
+    setVisibleProjects({});
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -166,7 +169,7 @@ export default function Projects() {
     return () => {
       elements.forEach((el) => observer.unobserve(el));
     };
-  }, []);
+  }, [filter]);
 
   return (
     <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors">
@@ -204,7 +207,7 @@ export default function Projects() {
                       ? 'animate-slide-in-up'
                       : 'animate-slide-in-right'
                   : 'opacity-0'
-                }`}
+                  }`}
                 data-index={index}
               >
                 <picture>
