@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import philippeWebp from '../media/philippe.webp';
 import philippeImage from '../media/philippe.png';
 
 export default function Hero() {
@@ -63,11 +64,15 @@ export default function Hero() {
               }`}
           >
             <div className="aspect-square rounded-full overflow-hidden shadow-xl">
-              <img
-                src={philippeImage}
-                alt="Philippe Garcia image de profil"
-                className="w-full h-full object-cover grayscale transition-all duration-300 ease-in-out hover:grayscale-0"
-              />
+              <picture>
+                <source srcSet={philippeWebp} type="image/webp" />
+                <source srcSet={philippeImage} type="image/png" />
+                <img
+                  src={philippeImage}
+                  alt="Philippe Garcia image de profil"
+                  className="w-full h-full object-cover grayscale transition-all duration-300 ease-in-out hover:grayscale-0"
+                />
+              </picture>
             </div>
           </div>
         </div>
