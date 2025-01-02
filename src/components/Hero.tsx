@@ -64,7 +64,7 @@ export default function Hero() {
           >
             <div className="aspect-square rounded-full overflow-hidden shadow-xl">
               <img
-                src="/media/philippe.png"
+                src={philippeImage}
                 alt="Philippe Garcia image de profil"
                 className="w-full h-full object-cover grayscale transition-all duration-300 ease-in-out hover:grayscale-0"
               />
