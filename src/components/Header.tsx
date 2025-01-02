@@ -9,7 +9,7 @@ export default function Header() {
     <header className="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 shadow-sm transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <a href="#">
+          <a href="/">
             <div className="flex items-center">
               <Code className="h-8 w-8 text-primary" />
               <span className="ml-2 text-xl font-bold text-gray-900 dark:text-white">
@@ -19,16 +19,16 @@ export default function Header() {
           </a>
 
           <nav className="hidden md:flex space-x-8">
-            <a href="#about" className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
+            <a href="/#about" className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
               À propos
             </a>
-            <a href="#skills" className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
+            <a href="/#skills" className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
               Compétences
             </a>
-            <a href="#projects" className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
+            <a href="/#projects" className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
               Projets
             </a>
-            <a href="#contact" className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
+            <a href="/#contact" className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
               Contact
             </a>
           </nav>
@@ -70,16 +70,16 @@ export default function Header() {
       {isMenuOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 dark:bg-gray-900">
-            <a href="#about" className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
+            <a href="/#about" className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
               À propos
             </a>
-            <a href="#skills" className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
+            <a href="/#skills" className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
               Compétences
             </a>
-            <a href="#projects" className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
+            <a href="/#projects" className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
               Projets
             </a>
-            <a href="#contact" className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
+            <a href="/#contact" className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
               Contact
             </a>
             <div className="flex items-center space-x-4 px-3 py-2">

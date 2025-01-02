@@ -12,8 +12,8 @@ const Error: React.FC<ErrorProps> = ({
 }) => {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen">
-            <h1 className="text-4xl font-bold mb-4">Erreur {statusCode}</h1>
-            <p className="text-xl mb-8">{message}</p>
+            <h1 className="text-4xl font-bold mb-4 dark:text-white">Erreur {statusCode}</h1>
+            <p className="text-xl mb-8 dark:text-white">{message}</p>
             <a
                 href="/"
                 className="px-4 py-2 border-solid border-primary border-[2px] bg-primary text-white rounded hover:bg-white hover:text-primary"
